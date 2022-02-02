@@ -1,0 +1,41 @@
+{
+  "name": "moneydashboard-api",
+  "version": "1.0.0",
+  "description": "API for MoneyDashboard (Neon Version)",
+  "scripts": {
+    "build": "tsc",
+    "prepublish": "npm run build",
+    "test": "jest"
+  },
+  "keywords": [],
+  "author": "iLeoDo",
+  "license": "MIT",
+  "dependencies": {
+    "amazon-cognito-identity-js": "^4.5.14",
+    "aws-sdk": "^2.863.0",
+    "axios": "^0.25.0",
+    "class-transformer": "^0.5.1",
+    "es6-shim": "^0.35.6",
+    "moment": "^2.29.1",
+    "reflect-metadata": "^0.1.13"
+  },
+  "devDependencies": {
+    "@types/jest": "^27.4.0",
+    "@types/node": "^17.0.10",
+    "jest": "^27.4.7",
+    "nodemon": "^2.0.15",
+    "ts-jest": "^27.1.3",
+    "ts-node": "^10.4.0",
+    "typescript": "^4.5.5"
+  },
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ileodo/moneydashboard-api.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ileodo/moneydashboard-api/issues"
+  },
+  "homepage": "https://github.com/ileodo/moneydashboard-api#readme"
+}
