@@ -1,6 +1,6 @@
 {
   "name": "moneydashboard-api",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "API for MoneyDashboard (Neon Version)",
   "scripts": {
     "build": "tsc",
