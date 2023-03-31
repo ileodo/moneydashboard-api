@@ -1,4 +1,4 @@
-import 'reflect-metadata';
+import 'reflect-metadata'
 
 export { Account } from './model/account'
 export { Amount } from './model/amount'
