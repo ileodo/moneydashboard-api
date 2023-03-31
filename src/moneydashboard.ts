@@ -1,13 +1,13 @@
 import axios from 'axios'
-import { AuthenticationDetails, CognitoUserPool, CognitoUser } from 'amazon-cognito-identity-js';
+import {AuthenticationDetails, CognitoUserPool, CognitoUser} from 'amazon-cognito-identity-js';
 import AWS from 'aws-sdk';
 
 import moment from 'moment';
-import { plainToInstance } from 'class-transformer';
-import { Account } from './model/account'
-import { Transaction } from './model/transaction'
-import { Budget } from './model/budget'
-import { Category } from './model/category';
+import {plainToInstance} from 'class-transformer';
+import {Account} from './model/account'
+import {Transaction} from './model/transaction'
+import {Budget} from './model/budget'
+import {Category} from './model/category';
 
 const AWS_COGNITO_CONFIG = {
     IDENTITY_POOL_ID: 'eu-west-2:f739e3a9-95bb-4bd9-8238-d9a6777ffeac',
@@ -26,23 +26,23 @@ export class MoneyDashboard {
     accessToken: string;
 
     /**
-     * 
-     * @param token 
+     *
+     * @param token
      */
     constructor(token: string = "") {
         this.accessToken = token;
     }
 
     /**
-     * 
+     *
      * Logs in using the provided credentials
-     * 
+     *
      * @param username MoneyDashboard username
      * @param password MoneyDashboard password
      * @return {Promise<MoneyDashboard>} return the Moneydashbord hanle `this`
      */
     login(username: string, password: string): Promise<MoneyDashboard> {
-        var _this = this;
+        let _this = this;
 
         return new Promise((resolve, reject) => {
 
@@ -86,7 +86,7 @@ export class MoneyDashboard {
 
     /**
      * Get a lis of accounts attached to the current login user.
-     * 
+     *
      * @returns  {Promise<Account[]} a list of Account under the login user
      */
     async listAccounts(): Promise<Account[]> {
@@ -110,7 +110,7 @@ export class MoneyDashboard {
 
     /**
      * Get a lis of transactions under certains accounts between a given date range.
-     * 
+     *
      * @param accountIds {String[]} list of the account ids.
      * @param startDate {String} start date (inclusive) in the format YYYY-MM-DD
      * @param endDate  {String} end date (inclusive) in the format YYYY-MM-DD
@@ -142,7 +142,7 @@ export class MoneyDashboard {
 
     /**
      * Get budgets statistic
-     * 
+     *
      * @param fromDate {String} start date (inclusive) in the format YYYY-MM-DD
      * @param toDate  {String} end date (inclusive) in the format YYYY-MM-DD
      * @returns {Promise<Budget[]} a list of Budget
@@ -171,8 +171,8 @@ export class MoneyDashboard {
     }
 
     /**
-     * List all categories in the system 
-     * 
+     * List all categories in the system
+     *
      * @returns {Promise<Category[]} a list of categories.
      */
     async listCategories(): Promise<Category[]> {
@@ -200,7 +200,7 @@ export class MoneyDashboard {
 
     /**
      * Refresh all linked accounts in MoneyDashboard
-     * @returns {Promise<Boolean>} 
+     * @returns {Promise<Boolean>}
      */
     async refreshAccounts(): Promise<void> {
         const endPoint = `${API_ENDPOINT}/accounts/refresh`;
