@@ -13,7 +13,7 @@
 A node.js version api for [Money Dashboard (Neon)](https://app.moneydashboard.com/login)
 
 
-# Get Started
+## Get Started
 
 ```bash
 npm install moneydashboard-api
@@ -31,7 +31,7 @@ md.login("USERNAME", "PASSWORD")
 ```
 
 
-# Contribution
+## Contribution
 
 All contributions are welcomed, especially the following aspects:
 
